@@ -1,13 +1,11 @@
-from os import getenv
 from discord.ext import commands
-from dotenv import load_dotenv
+from utils.getEnv import getEnv, load_env
 
 # Load enviroments from .env file
-load_dotenv()
-
+load_env()
 # Create bot client
-prefix = getenv("BOT_PREFIX")
-description = getenv("BOT_DESCRIPTION")
+prefix = getEnv("BOT_PREFIX")
+description = getEnv("BOT_DESCRIPTION")
 client = commands.Bot(command_prefix=prefix, description=description)
 
 
@@ -18,7 +16,7 @@ async def on_ready():
 
 
 # Load the extensions or cogs
-cogs = ["cogs.ping"]
+cogs = ["cogs.ping", "cogs.joke", "cogs.clima"]
 for i in cogs:
     try:
         client.load_extension(i)
@@ -27,4 +25,4 @@ for i in cogs:
 
 # Run the bot
 if __name__ == "__main__":
-    client.run(getenv("BOT_TOKEN"))
+    client.run(getEnv("BOT_TOKEN"))
