@@ -24,6 +24,6 @@ Abrimos una terminal en la carpeta del proyecto y ejecutamos:
    pipenv run start
    ```
 
-Siguiente paso: [Subir codigo](docs/upload.md)
+Siguiente paso: [Subir codigo](./upload.md)
 
 **© Watermelon Code**
