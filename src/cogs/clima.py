@@ -20,13 +20,22 @@ class Clima_Command(commands.Cog):
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}"
         r = get(url)
         print(r[0])
-        c = r[1]["main"]["temp"] - 273.15
-        city_name = r[1]["name"]
         if r[0] == 200:
+            city_name = r[1]["name"]
+            c = r[1]["main"]["temp"] - 273.15
+            c = round(c)
+            veloc = r[1]["wind"]["speed"]
+            humedad = r[1]["main"]["humidity"]
             embed = discord.Embed(
                 title=f"Temperatura en {city_name}",
-                description=f":white_sun_small_cloud: {c}°",
             )
+            embed.add_field(
+                name=":white_sun_small_cloud: Temperatura",
+                inline=False,
+                value=f"{c}°",
+            )
+            embed.add_field(name=":droplet: Humedad", inline=True, value=f"{humedad}%")
+            embed.add_field(name=":cloud: Viento: ", inline=True, value=f"{veloc} m/s")
             await ctx.send(embed=embed)
         else:
             await ctx.send(f":x: Error **{r[0]}**")
