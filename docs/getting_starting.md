@@ -24,6 +24,6 @@
    pip3 install pipenv --user
    ```
 
-Siguiente paso [Ejecución del codigo](docs/startUp.md)
+Siguiente paso [Ejecución del codigo](./startUp.md)
 
 **© Watermelon Code**
