@@ -1,0 +1,10 @@
+pull_requests_rules:
+  - name: automatic merge from dependabot
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+      - label!=work-in-progress
+      - "status-success=ci"
+      - "status-success=ci"
+    actions:
+      merge:
+        method: merge
