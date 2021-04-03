@@ -1,5 +1,6 @@
 from discord.ext import commands
 from utils.getEnv import getEnv, load_env
+from keep_alive import keep_alive
 
 # Load enviroments from .env file
 load_env()
@@ -22,6 +23,8 @@ for i in cogs:
         client.load_extension(i)
     except Exception as err:
         print(f"An error has occurred {err}")
+
+keep_alive()
 
 # Run the bot
 if __name__ == "__main__":
