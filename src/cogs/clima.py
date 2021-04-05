@@ -1,4 +1,5 @@
-# WARNING IN DEVELOMENT [95%]
+# ✅ PASS
+
 from discord.ext import commands
 from utils.fetch import get
 from utils.getEnv import getEnv

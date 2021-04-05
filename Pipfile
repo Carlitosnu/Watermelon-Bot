@@ -13,6 +13,8 @@ lint = "flake8 src/"
 python-dotenv = "==0.16.0"
 requests = "*"
 flask = "*"
+pynacl = "*"
+youtube-dl = "*"
 
 [dev-packages]
 flake8 = "3.9.0"
