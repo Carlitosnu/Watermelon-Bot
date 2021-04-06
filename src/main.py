@@ -39,7 +39,7 @@ async def help(ctx):
 
 
 # Load the extensions or cogs
-cogs = ["cogs.ping", "cogs.joke", "cogs.clima", "cogs.moderation", "cogs.avatar"]
+cogs = ["cogs.ping", "cogs.joke", "cogs.clima"]
 for i in cogs:
     try:
         client.load_extension(i)
